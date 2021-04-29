@@ -1,0 +1,76 @@
+*,*::before,*::after{
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.container{
+    border:1px solid red;
+    max-width: 500px;
+    margin: 0px auto;
+}
+table{
+    background-color: green;
+    color: white;
+}
+tr{
+    /* background-color: tomato; */
+}
+/* .odd{
+    background-color: blue;
+}
+
+.even{
+    background-color: yellow;
+} */
+
+tr:nth-child(2n+1){
+    background-color: red;
+}
+tr:nth-child(2n){
+    background-color: yellow;
+}
+
+#btn{
+    background-color: green;
+}
+
+#btn td{
+    color:red;
+}
+
+input[type="button"]{
+    color:red;
+    background-color: red;
+}
+
+p::first-line{
+    background-color: green;
+    color:white;
+}
+
+p::first-letter{
+    font-size: 40px;
+}
+
+p::before{
+    content: 'CG- ';
+}
+p::after{
+    content: '- Huế';
+}
+
+p::selection{
+    color:red;
+    background-color: orange;
+}
+
+#square{
+    width: 100px;
+    height: 100px;
+    border:10px solid red;
+    margin: 50px 0px 0px 50px;
+    background-color: yellow;
+    padding: 10px 15px 20px 25px;
+    border-radius: 30px 10px;
+}
