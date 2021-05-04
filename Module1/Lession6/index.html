@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-DOM-BOM</title>
+</head>
+<body>
+    <!-- <button onmouseover="
+                            this.innerText= new Date();
+                            this.style.color ='red'
+                        "
+            onmouseout="
+                        this.innerText = 'Show Datetime';
+                        this.style.color=''
+                        ">
+    Show Datetime</button> -->
+
+    <!-- <input type="color" onchange="window.document.getElementsByTagName('body')[0].style.backgroundColor = this.value">
+    <br>
+    <input type="range" min=0 max =255 onchange="alert(this.value)"> -->
+
+    <!-- <button onmouseover="mouseOver()"
+            onmouseout="mouseOut()">
+    Show Datetime</button> -->
+
+    <button>Show Datetime</button>
+
+    <br>
+    <button onclick="addElement()">Add Element</button>
+    <div id="elements"></div>
+    <script>
+        document.getElementsByTagName('button')[0].addEventListener('mouseover', mouseOver);
+        document.getElementsByTagName('button')[0].addEventListener('mouseout', mouseOut);
+
+
+        function mouseOver(){
+            document.getElementsByTagName('button')[0].innerHTML= new Date();
+            document.getElementsByTagName('button')[0].style.color ='red'
+        }
+
+        function mouseOut(){
+            document.getElementsByTagName('button')[0].innerText = 'Show Datetime';
+            document.getElementsByTagName('button')[0].style.color=''
+        }
+        let id=0;
+        function addElement(){
+            id= id + 1;
+            document.getElementById('elements').innerHTML += `<div id='ip_${id}'>
+                                                                    <input class='controll' type="text"> 
+                                                                    <button onclick="deleteElement('ip_${id}')">Delete</button> 
+                                                             </div>`
+        }
+        function deleteElement(id){
+            document.getElementById(id).remove();
+        }
+    </script>
+</body>
+</html>
