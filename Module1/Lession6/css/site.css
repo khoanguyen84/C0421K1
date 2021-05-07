@@ -1,0 +1,22 @@
+.container{
+    max-width: 900px;
+    margin: 0px auto;
+}
+.row{
+    width: 100%;
+}
+
+.rgb-area{
+    width: 100%;
+    height: 200px;
+    margin: 0px auto;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px;
+    font-weight: 900;
+}
+.col-3{
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+}

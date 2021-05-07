@@ -5,8 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS-DOM-BOM</title>
+    <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="rgb-area">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <h3>RED</h3>
+                <input type="range" min="0" max="255" value="100" oninput="showColor()">
+            </div>
+            <div class="col-3">
+                <h3>GREEN</h3>
+                <input type="range" min="0" max="255" value="100" oninput="showColor()">
+            </div>
+            <div class="col-3">
+                <h3>BLUE</h3>
+                <input type="range" min="0" max="255" value="100" oninput="showColor()">
+            </div>
+            <div class="col-3">
+                <h3>ALPHA</h3>
+                <input type="range" min="0" max="100" value="100" oninput="showColor()">
+            </div>
+        </div>
+    </div>
     <!-- <button onmouseover="
                             this.innerText= new Date();
                             this.style.color ='red'
@@ -25,36 +50,53 @@
             onmouseout="mouseOut()">
     Show Datetime</button> -->
 
-    <button>Show Datetime</button>
+    <!-- <button>Show Datetime</button>
 
     <br>
     <button onclick="addElement()">Add Element</button>
-    <div id="elements"></div>
+    <div id="elements"></div> -->
     <script>
-        document.getElementsByTagName('button')[0].addEventListener('mouseover', mouseOver);
-        document.getElementsByTagName('button')[0].addEventListener('mouseout', mouseOut);
+        // document.getElementsByTagName('button')[0].addEventListener('mouseover', mouseOver);
+        // document.getElementsByTagName('button')[0].addEventListener('mouseout', mouseOut);
 
 
-        function mouseOver(){
-            document.getElementsByTagName('button')[0].innerHTML= new Date();
-            document.getElementsByTagName('button')[0].style.color ='red'
+        // function mouseOver(){
+        //     document.getElementsByTagName('button')[0].innerHTML= new Date();
+        //     document.getElementsByTagName('button')[0].style.color ='red'
+        // }
+
+        // function mouseOut(){
+        //     document.getElementsByTagName('button')[0].innerText = 'Show Datetime';
+        //     document.getElementsByTagName('button')[0].style.color=''
+        // }
+        // let id=0;
+        // function addElement(){
+        //     id= id + 1;
+        //     document.getElementById('elements').innerHTML += `<div id='ip_${id}'>
+        //                                                             <input class='controll' type="text"> 
+        //                                                             <button onclick="deleteElement('ip_${id}')">Delete</button> 
+        //                                                      </div>`
+        // }
+        // function deleteElement(id){
+        //     document.getElementById(id).remove();
+        // }
+
+        function showColor(){
+            let ranges = document.getElementsByTagName('input');
+            let red = parseInt(ranges[0].value);
+            let green = parseInt(ranges[1].value);
+            let blue = parseInt(ranges[2].value);
+            let alpha = parseInt(ranges[3].value)/100;
+            let rgbArea = document.getElementsByClassName('rgb-area')[0];
+            rgbArea.innerHTML = `RGBA(${red}, ${green}, ${blue}, ${alpha})`;
+            rgbArea.style.backgroundColor = `RGB(${red}, ${green}, ${blue}, ${alpha})`;
         }
 
-        function mouseOut(){
-            document.getElementsByTagName('button')[0].innerText = 'Show Datetime';
-            document.getElementsByTagName('button')[0].style.color=''
+        function ready(){
+            showColor();
         }
-        let id=0;
-        function addElement(){
-            id= id + 1;
-            document.getElementById('elements').innerHTML += `<div id='ip_${id}'>
-                                                                    <input class='controll' type="text"> 
-                                                                    <button onclick="deleteElement('ip_${id}')">Delete</button> 
-                                                             </div>`
-        }
-        function deleteElement(id){
-            document.getElementById(id).remove();
-        }
+
+        ready();
     </script>
 </body>
 </html>
