@@ -100,9 +100,3 @@ let greaterThen20 = array.some(function(value, index){
 let findFirst58 = array.find(function(value, index){
     return value > 58;
 })
-
-
-
-for(k=0;k<10;k++){
-    document.write(`${k+1},`);
-}
