@@ -22,6 +22,8 @@ function printMatrix(matrix){
     return result;
 }
 
+let m1 = generateMatrix(10,10);
+let m2 = generateMatrix(5,5, 10,30)
 
 let arr = [1,2,3,4,5];
 function myJoin(separator = ','){
@@ -48,3 +50,27 @@ function showMatrix(){
     // document.getElementById('result').innerHTML = printMatrix(matrix);
     
 }
+
+
+let n1 = 5, n2 = 7;
+// function sum2(){
+//     n1 += 2;
+//     n2 += 3;
+//     console.log(`${n1} - ${n2}`);
+//     return n1 + n2;    
+// }
+// let total = sum2();
+// let tota2 = sum2();
+// console.log(`${n1} + ${n2} = ${total}`);
+
+
+function sum(n1, n2){
+    n1 += 2;
+    n2 += 3;
+    console.log(`${n1} - ${n2}`);
+    return n1 + n2;    
+}
+let total = sum(n1,n2);
+let total2 = sum(n1,n2);
+// let total2 = sum(100,200);
+console.log(`${n1} + ${n2} = ${total}`);
