@@ -36,3 +36,34 @@ function printMatrixDivide5(matrix, value = 5){
     }
     return result;
 }
+
+function generateArray(size, min, max){
+    let arr = [];
+    let value = 0;
+    for(let i=0; i< size; i++){
+        do{
+            value = Math.floor(Math.random()*(max - min +1) + min);
+        }
+        while(arr.indexOf(value) != -1)
+        arr[i] = value;
+    }
+    return arr;
+}
+
+let array = [1,2,3,4,4,5,6,4,7,8,4,9]
+let v = 4;
+
+let first =0;
+let last = array.length -1;
+while(first <= last){
+    if(array[first] == v){
+        for(let i = first; i < last; i++){
+            array[i] = array[i+1];
+        }
+        array[last] =0;
+        last--;
+    }
+    else{
+        first++; 
+    }
+}
